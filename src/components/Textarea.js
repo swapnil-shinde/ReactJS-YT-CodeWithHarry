@@ -1,7 +1,7 @@
 import React from 'react'
 import { useState } from 'react'
 
-export default function Textarea() {
+export default function Textarea(props) {
   
   const [text, setText] = useState('')
   
@@ -36,9 +36,9 @@ export default function Textarea() {
 
   return (
     <div>
-      <div className="mb-3 container">
+      <div className="mb-3 container" style={{color: props.mode === 'dark'?'white':'black'}}>
         <h1>Enter text here...</h1>
-        <textarea className="form-control" value={text} onChange={handleOnChange} id="myBox" rows="8"></textarea>
+        <textarea className="form-control" value={text} onChange={handleOnChange} id="myBox" rows="8" style={{backgroundColor: props.mode === 'dark'?'#262833':'white', color: props.mode === 'dark'?'white':'black'}}></textarea>
         <button className='btn btn-primary mt-3 mx-2' onClick={handleUpClick}>Convert to Upper Case</button>
         <button className='btn btn-primary mt-3 mx-2' onClick={handleLoClick}>Convert to Lower Case</button>
         <button className='btn btn-primary mt-3 mx-2' onClick={handleClClick}>Clear Text</button>
@@ -46,12 +46,12 @@ export default function Textarea() {
         <button className='btn btn-primary mt-3 mx-2' onClick={removeExtraSpace}>Remove Extra Spaces</button>
 
       </div>
-      <div className='container'>  
+      <div className='container' style={{color: props.mode === 'dark'?'white':'black'}}>  
         <h2>Your text summary</h2>
         <p>{text == '' ? 0 : text.split(' ').length} words and {text.length} characters</p>
         <p>{text == '' ? 0 : 0.008 * text.split(' ').length} Minutes read</p>
         <h2>Preview</h2>
-        <p>{text}</p>
+        <p>{text.length ? text : 'Please enter something in above textarea to preview...'}</p>
       </div>
     </div>
   )
