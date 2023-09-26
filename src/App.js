@@ -1,7 +1,7 @@
 import './App.css';
-import About from './components/About';
 import Navbar from './components/Navbar';
 import Textarea from './components/Textarea';
+// import About from './components/About';
 
 let name = 'Swapnil'
 function App() {
@@ -9,7 +9,7 @@ function App() {
     <div className="blank">
       <Navbar title='TextUtils' />
       <Textarea />
-      <About/>
+      {/* <About/> */}
     </div>
   );
 }
