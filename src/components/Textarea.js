@@ -39,6 +39,21 @@ export default function Textarea(props) {
     props.alertMsg('success', 'Removed extra space from sentence!')
   }
 
+  const countWords = () => {
+    debugger
+      let newText = text.replace(/(^\s*)|(\s*$)/gi,"");//exclude  start and end white-space
+      newText = newText.replace(/[ ]{2,}/gi," ");//2 or more space to 1
+      newText = newText.replace(/\n /,"\n"); // exclude newline with a start spacing
+      return newText.split(' ').filter(function(str){return str!="";}).length;
+      //return s.split(' ').filter(String).length; - this can also be used
+  }
+
+  const countChar = () => {
+    // use /\r?\n|\r/g to remove all spaces, line breaks from the string
+    let newText = text.replace(/\r?\n|\r/g, "");
+    return newText.length;
+  }
+
   return (
     <div>
       <div className="mb-3 container" style={{color: props.mode === 'dark'?'white':'black'}}>
@@ -53,8 +68,9 @@ export default function Textarea(props) {
       </div>
       <div className='container' style={{color: props.mode === 'dark'?'white':'black'}}>  
         <h2>Your text summary</h2>
-        <p>{text == '' ? 0 : text.split(' ').length} words and {text.length} characters</p>
-        <p>{text == '' ? 0 : 0.008 * text.split(' ').length} Minutes read</p>
+        <p>{text == '' ? 0 : countWords()} words and {countChar()} characters</p>
+        {/* <p>{text == '' ? 0 : text.split(' ').length} words and {text.length} characters</p> */}
+        <p>{text == '' ? 0 : 0.008 * countChar()} Minutes read</p>
         <h2>Preview</h2>
         <p>{text.length ? text : 'Please enter something in above textarea to preview...'}</p>
       </div>
