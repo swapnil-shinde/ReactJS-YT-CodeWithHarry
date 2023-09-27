@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/ReactJS-YT-CodeWithHarry/static/css/main.abd64e84.css",
+    "main.js": "/ReactJS-YT-CodeWithHarry/static/js/main.16b61914.js",
+    "static/js/787.6e0fdd50.chunk.js": "/ReactJS-YT-CodeWithHarry/static/js/787.6e0fdd50.chunk.js",
+    "index.html": "/ReactJS-YT-CodeWithHarry/index.html",
+    "main.abd64e84.css.map": "/ReactJS-YT-CodeWithHarry/static/css/main.abd64e84.css.map",
+    "main.16b61914.js.map": "/ReactJS-YT-CodeWithHarry/static/js/main.16b61914.js.map",
+    "787.6e0fdd50.chunk.js.map": "/ReactJS-YT-CodeWithHarry/static/js/787.6e0fdd50.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.abd64e84.css",
+    "static/js/main.16b61914.js"
+  ]
+}
