@@ -11,27 +11,32 @@ export default function Textarea(props) {
   const handleUpClick = () => {
     let newText = text.toUpperCase()
     setText(newText)
+    props.alertMsg('success', 'Converted to upper case!')
   }
 
   const handleLoClick = () => {
     let newText = text.toLowerCase()
     setText(newText)
+    props.alertMsg('success', 'Converted to lower case!')
   }
 
   const handleClClick = () => {
     let newText = ''
     setText(newText)
+    props.alertMsg('success', 'Cleared text!')
   }
 
   const handleCopy = () => {
     let text = document.getElementById('myBox')
     text.select()
     navigator.clipboard.writeText(text.value)
+    props.alertMsg('success', 'Text copied successfully!')
   }
 
   const removeExtraSpace = () => {
     let newText = text.split(/[ ]+/)
     setText(newText.join(' '))
+    props.alertMsg('success', 'Removed extra space from sentence!')
   }
 
   return (
