@@ -2,8 +2,16 @@ import { useState } from 'react';
 import './App.css';
 import Navbar from './components/Navbar';
 import Textarea from './components/Textarea';
-// import About from './components/About';
+import About from './components/About';
 import Alert from './components/Alert';
+
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Routes,
+  Link
+} from "react-router-dom";
 
 function App() {
 
@@ -34,12 +42,17 @@ function App() {
   }
 
   return (
-    <div className="blank">
-      <Navbar title='TextUtils' mode={mode} toggleMode={toggleMode} />
-      <Alert alert={alert}/>
-      <Textarea mode={mode} alertMsg={alertMsg} />
-      {/* <About/> */}
-    </div>
+    <Router>
+      <div className="blank">
+        <Navbar title='TextUtils' mode={mode} toggleMode={toggleMode} />
+        <Alert alert={alert}/>
+
+        <Routes>
+          <Route path="/" element={<Textarea mode={mode} alertMsg={alertMsg} />} />
+          <Route path="/about" element={<About />} />
+        </Routes>
+      </div>
+    </Router>
   );
 }
 
