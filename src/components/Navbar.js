@@ -24,6 +24,7 @@ export default function Navbar(props) {
               {/* Commenting the Router Login due to Hosting on GitHub */}
               <Link className="nav-link" to="/about" style={{backgroundColor: props.mode === 'dark'?'#262833':'#e5e5e5', color: props.mode === 'dark'?'white':'black'}}>About</Link>
               {/* <a className="nav-link" href="#" style={{backgroundColor: props.mode === 'dark'?'#262833':'#e5e5e5', color: props.mode === 'dark'?'white':'black'}}>About</a> */}
+
             </li>
           </ul>
           {/* Commenting Search Option */}

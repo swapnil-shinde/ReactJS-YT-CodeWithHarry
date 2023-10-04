@@ -11,6 +11,7 @@ import {
   Routes,
 } from "react-router-dom";
 
+
 function App() {
 
   // Wheater dark mode is enabled or not
@@ -58,6 +59,7 @@ function App() {
       //   <Textarea mode={mode} alertMsg={alertMsg} />
       //   {/* <About /> */}
       // </div>
+
   );
 }
 
