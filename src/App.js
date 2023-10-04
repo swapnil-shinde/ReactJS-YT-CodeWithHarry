@@ -2,14 +2,14 @@ import { useState } from 'react';
 import './App.css';
 import Navbar from './components/Navbar';
 import Textarea from './components/Textarea';
-// import About from './components/About';
+import About from './components/About';
 import Alert from './components/Alert';
 
-// import {
-//   BrowserRouter as Router,
-//   Route,
-//   Routes,
-// } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Route,
+  Routes,
+} from "react-router-dom";
 
 function App() {
 
@@ -40,24 +40,24 @@ function App() {
   }
 
   return (
-    // // Commenting the Router Login due to Hosting on GitHub
-    // <Router>
-    //   <div className="blank">
-    //     <Navbar title='TextUtils' mode={mode} toggleMode={toggleMode} />
-    //     <Alert alert={alert}/>
-    //     <Routes>
-    //       <Route path="/" element={<Textarea mode={mode} alertMsg={alertMsg} />} />
-    //       <Route path="/about" element={<About />} />
-    //     </Routes>
-    //   </div>
-    // </Router>
-
+    // Commenting the Router Login due to Hosting on GitHub
+    <Router>
       <div className="blank">
         <Navbar title='TextUtils' mode={mode} toggleMode={toggleMode} />
         <Alert alert={alert}/>
-        <Textarea mode={mode} alertMsg={alertMsg} />
-        {/* <About /> */}
+        <Routes>
+          <Route path="/" element={<Textarea mode={mode} alertMsg={alertMsg} />} />
+          <Route path="/about" element={<About />} />
+        </Routes>
       </div>
+    </Router>
+
+      // <div className="blank">
+      //   <Navbar title='TextUtils' mode={mode} toggleMode={toggleMode} />
+      //   <Alert alert={alert}/>
+      //   <Textarea mode={mode} alertMsg={alertMsg} />
+      //   {/* <About /> */}
+      // </div>
   );
 }
 
