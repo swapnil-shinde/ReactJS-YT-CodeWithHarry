@@ -17,8 +17,8 @@ export default function Navbar(props) {
           <ul className="navbar-nav me-auto mb-2 mb-lg-0">
             <li className="nav-item">
               {/* Commenting the Router Login due to Hosting on GitHub */}
-              <Link className="nav-link active" aria-current="page" to="/" style={{backgroundColor: props.mode === 'dark'?'#262833':'#e5e5e5', color: props.mode === 'dark'?'white':'black'}}>Home</Link>
-              {/* <a className="nav-link active" aria-current="page" href="#" style={{backgroundColor: props.mode === 'dark'?'#262833':'#e5e5e5', color: props.mode === 'dark'?'white':'black'}}>Home</a> */}
+              <Link className="nav-link" aria-current="page" to="/" style={{backgroundColor: props.mode === 'dark'?'#262833':'#e5e5e5', color: props.mode === 'dark'?'white':'black'}}>Home</Link>
+              {/* <a className="nav-link" aria-current="page" href="#" style={{backgroundColor: props.mode === 'dark'?'#262833':'#e5e5e5', color: props.mode === 'dark'?'white':'black'}}>Home</a> */}
             </li>
             <li className="nav-item">
               {/* Commenting the Router Login due to Hosting on GitHub */}
@@ -27,11 +27,6 @@ export default function Navbar(props) {
 
             </li>
           </ul>
-          {/* Commenting Search Option */}
-          {/* <form className="d-flex" role="search">
-            <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
-            <button className="btn btn-outline-success" type="submit">Search</button>
-          </form> */}
           <div className={`form-check form-switch`}>
             <input className="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault" onClick={props.toggleMode} />
             <label className="form-check-label" htmlFor="flexSwitchCheckDefault">Enable Dark Mode</label>

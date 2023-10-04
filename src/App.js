@@ -14,7 +14,6 @@ import {
 
 function App() {
 
-  // Wheater dark mode is enabled or not
   const [mode, setMode] = useState('light')
   const [alert, setAlert] = useState(null)
 
